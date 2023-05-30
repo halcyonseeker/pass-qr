@@ -23,7 +23,7 @@ case "$1" in
 	version|--version|-v) cmd_qr_version ;;
 	*) for password in "$@"; do
 		   echo
-		   pass "$password" | tr -d '\n' | qrencode -t UTF8
+		   pass "$password" | head -1 | tr -d '\n' | qrencode -t UTF8
 		   echo
 		   shift
 	   done ;;
